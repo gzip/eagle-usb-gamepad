@@ -1,0 +1,35 @@
+--- v1.4.2 (July 14, 2013)
+- Corrected the USB Vendor ID
+
+--- v1.4.1 (April 26, 2013)
+- Reduced declared max current from 120mA to 100mA. This makes
+it possible to connect the adapter to my keyboard USB port but
+is still a conservative estimate for the worst combination
+of hypothetical non-standard power hungry controllers.
+- Some code cleanups
+
+--- v1.4 (April 20, 2013)
+- Support for Atmega168. Use Makefile.atmega168.
+- New USB VID/PID
+- Simplified main loop by remving setIdle/getIdle implementation. Optional for
+  joysticks according to HID specification appendix G.
+
+--- v1.3 (April 2012)
+- Added support for SNES multitaps in 4 player mode.
+
+--- v1.2 (May 2, 2009)
+- License changed to GPLv2
+- Implemented "Live autodetection". This allows NES and SNES controllers to be
+changed at runtime. This feature can be disabled by closing JP1.
+- Added NES fourscore support. When a fourscore is detected in port 1, fourscore
+mode is entered and ports 1 and 2 are used to read up to 4 NES controllers.
+
+--- v1.1 (18 Apr 2007)
+- Changed report descriptor. There are now four separate report IDs, one
+per controller. This was necessary because even though all axis and buttons
+were perfectly functional in 'control panel -> game controllers', it was not
+the case in many games, including zsnes and snes9x!
+- Changed device id to 0x0A9D
+
+--- v1.0 (24 Mar 2007)
+Initial release.
